@@ -19,6 +19,7 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sword_area: Area2D = $SwordArea
 @onready var hitbox_area: Area2D = $HitboxArea
+@onready var health_progress_bar: ProgressBar = $HealthProgressBar
 
 var input_vector: Vector2 = Vector2(0, 0)
 var is_running: bool = false
@@ -50,6 +51,10 @@ func _process(delta: float):
 	
 	# Ritual
 	update_ritual(delta)
+	
+	# Atualizar Health Bar
+	health_progress_bar.max_value = max_health
+	health_progress_bar.value = health
 
 
 func _physics_process(delta: float):
