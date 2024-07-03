@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b80q22mecqmhe" path="res://misc/ritual.tscn" id="2_43ttv"]
 [ext_resource type="PackedScene" uid="uid://6jvx1ldk8hth" path="res://misc/big_skull.tscn" id="2_afx67"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6umwm"]
-radius = 18.0
-height = 60.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_ow4rq"]
+radius = 18.0278
 
 [sub_resource type="Animation" id="Animation_iajx1"]
 length = 0.001
@@ -278,8 +277,8 @@ hframes = 6
 vframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -30)
-shape = SubResource("CapsuleShape2D_6umwm")
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_ow4rq")
 debug_color = Color(0, 0.6, 0.701961, 0.278431)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
