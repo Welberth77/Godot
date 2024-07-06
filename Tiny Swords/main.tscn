@@ -1,6 +1,8 @@
-[gd_scene load_steps=46 format=3 uid="uid://c4plnwcbskji0"]
+[gd_scene load_steps=37 format=3 uid="uid://c4plnwcbskji0"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_1xjhn"]
 [ext_resource type="PackedScene" uid="uid://baquj4c5ckitr" path="res://Player/player.tscn" id="1_10ceu"]
+[ext_resource type="PackedScene" uid="uid://c7c4dmgq5hvo4" path="res://UI/game_over_ui.tscn" id="2_ruglx"]
 [ext_resource type="PackedScene" uid="uid://xcrp7d1sjuk8" path="res://systems/mob_spawner.tscn" id="2_ty80t"]
 [ext_resource type="PackedScene" uid="uid://cvc6l761oa5hy" path="res://UI/game_ui.tscn" id="3_we2ye"]
 [ext_resource type="Texture2D" uid="uid://diq0wy6fxlyqy" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="4_4rssp"]
@@ -18,8 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://bd3dht3tnl16r" path="res://addons/Tiny Swords/Deco/09.png" id="15_bge3i"]
 [ext_resource type="Script" path="res://systems/difficulty_system.gd" id="15_jvx70"]
 [ext_resource type="PackedScene" uid="uid://bxtddgjy7m1y5" path="res://misc/tree.tscn" id="17_vqgig"]
-[ext_resource type="Texture2D" uid="uid://d5fptoram7v0" path="res://addons/Tiny Swords/UI/Ribbons/Ribbon_Red_3Slides.png" id="19_aw5x3"]
-[ext_resource type="Texture2D" uid="uid://vh3cn564j6mi" path="res://addons/Tiny Swords/UI/Banners/Banner_Horizontal.png" id="20_058rn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vwp51"]
 texture = ExtResource("4_4rssp")
@@ -141,128 +141,12 @@ size = Vector2(12731.5, 1351.75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nw4a"]
 size = Vector2(1509.75, 5402.88)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omsvr"]
-texture = ExtResource("19_aw5x3")
-texture_margin_left = 64.0
-texture_margin_right = 64.0
-axis_stretch_horizontal = 2
-
-[sub_resource type="SystemFont" id="SystemFont_5ikqe"]
-font_names = PackedStringArray("Book Antiqua")
-font_weight = 999
-
-[sub_resource type="LabelSettings" id="LabelSettings_jgjo3"]
-font = SubResource("SystemFont_5ikqe")
-font_size = 42
-font_color = Color(0.371149, 0, 0.0156998, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7qym"]
-texture = ExtResource("20_058rn")
-texture_margin_left = 32.0
-texture_margin_top = 16.0
-texture_margin_right = 32.0
-texture_margin_bottom = 48.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-region_rect = Rect2(32, 48, 128, 128)
-
-[sub_resource type="SystemFont" id="SystemFont_75qam"]
-font_names = PackedStringArray("Book Antiqua")
-font_weight = 999
-
-[sub_resource type="LabelSettings" id="LabelSettings_ql15f"]
-font = SubResource("SystemFont_75qam")
-font_size = 28
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Animation" id="Animation_806le"]
-resource_name = "default"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BackGround:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.378929, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.811765)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TopPanel:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(0.378, 1),
-"update": 0,
-"values": [Vector2(338.5, -126), Vector2(338.5, 65)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("BottomPanel:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.7, 2),
-"transitions": PackedFloat32Array(0.4, 1),
-"update": 0,
-"values": [Vector2(353, 748), Vector2(353, 393)]
-}
-
-[sub_resource type="Animation" id="Animation_1v2so"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BackGround:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0.658824)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TopPanel:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(338.5, 65)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("BottomPanel:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(353, 393)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkpss"]
-_data = {
-"RESET": SubResource("Animation_1v2so"),
-"default": SubResource("Animation_806le")
-}
-
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("game_ui")]
 y_sort_enabled = true
 position = Vector2(-1, 0)
+script = ExtResource("1_1xjhn")
+game_ui = NodePath("GameUI")
+game_over_ui_template = ExtResource("2_ruglx")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -467,103 +351,3 @@ position = Vector2(191, -120)
 
 [node name="Tree46" parent="Trees" instance=ExtResource("17_vqgig")]
 position = Vector2(39, 1208)
-
-[node name="GameOverUI" type="CanvasLayer" parent="."]
-
-[node name="BackGround" type="ColorRect" parent="GameOverUI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.658824)
-
-[node name="TopPanel" type="Panel" parent="GameOverUI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -237.5
-offset_top = 65.0
-offset_right = 237.5
-offset_bottom = 172.0
-grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_omsvr")
-
-[node name="GameOverLabel" type="Label" parent="GameOverUI/TopPanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -22.5
-offset_right = 46.0
-offset_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "GAME OVER"
-label_settings = SubResource("LabelSettings_jgjo3")
-
-[node name="BottomPanel" type="Panel" parent="GameOverUI"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -223.0
-offset_top = -255.0
-offset_right = 223.0
-offset_bottom = -82.0003
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxTexture_t7qym")
-
-[node name="CenterContainer" type="CenterContainer" parent="GameOverUI/BottomPanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -136.5
-offset_top = -47.5
-offset_right = 136.5
-offset_bottom = 16.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="GridContainer" type="GridContainer" parent="GameOverUI/BottomPanel/CenterContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 25
-theme_override_constants/v_separation = 15
-columns = 2
-
-[node name="Label" type="Label" parent="GameOverUI/BottomPanel/CenterContainer/GridContainer"]
-layout_mode = 2
-text = "Time Survived:"
-label_settings = SubResource("LabelSettings_ql15f")
-
-[node name="TimeLabel" type="Label" parent="GameOverUI/BottomPanel/CenterContainer/GridContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "14:59"
-label_settings = SubResource("LabelSettings_ql15f")
-
-[node name="Label2" type="Label" parent="GameOverUI/BottomPanel/CenterContainer/GridContainer"]
-layout_mode = 2
-text = "Monsters Defeated:"
-label_settings = SubResource("LabelSettings_ql15f")
-
-[node name="MonstersLabel" type="Label" parent="GameOverUI/BottomPanel/CenterContainer/GridContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "1234
-"
-label_settings = SubResource("LabelSettings_ql15f")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="GameOverUI"]
-libraries = {
-"": SubResource("AnimationLibrary_bkpss")
-}
-autoplay = "default"
