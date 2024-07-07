@@ -55,10 +55,13 @@ func die():
 	if randf() <= drop_chance:
 		drop_item()
 	
+	# Incrementar contador
+	GameManager.monsters_defeated_counter += 1
+	
 	#Deletar Node
 	queue_free()
-	
-	
+
+
 func drop_item():
 	var drop = get_random_drop_item().instantiate()
 	drop.position = position
